@@ -65,7 +65,7 @@ class BloomdConnection(object):
         sent = False
         for attempt in range(self.attempts):
             try:
-                self.sock.sendall(cmd + "\n")
+                self.sock.sendall(cmd.encode() + "\n")
                 sent = True
                 break
             except socket.error as e:
